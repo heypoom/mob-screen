@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <div class="backdrop">
+    <h1>
+      อธิปไตย
+      ของประชาชน
+    </h1>
+  </div>
+
+  <div class="pride">
+    <div class="red"></div>
+    <div class="orange"></div>
+    <div class="yellow"></div>
+    <div class="green"></div>
+    <div class="blue"></div>
+    <div class="purple"></div>
+  </div>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Sukhumvit Set;
+    }
+
+    .backdrop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      height: 100vh;
+
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      left: 0;
+    }
+
+    .backdrop h1 {
+      margin: 0;
+      color: white;
+      font-size: 11.8em;
+      line-height: 1em;
+      text-align: center;
+
+      animation: text-bounce 0.5s infinite alternate;
+
+      background: rgb(255,121,121);
+      background: linear-gradient(45deg, rgba(255,121,121,1) 0%, rgba(255,190,118,1) 20%, rgba(246,229,141,1) 40%, rgba(186,220,88,1) 60%, rgba(126,214,223,1) 80%, rgba(224,86,253,1) 100%);
+
+      -webkit-text-stroke: 8px black;
+      -webkit-text-fill-color: white;
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes animate-red {
+      from {
+        background: #ff7979;
+      }
+
+      to {
+        background: #ffbe76;
+      }
+    }
+
+    @keyframes animate-orange {
+      from {
+        background: #ffbe76;
+      }
+
+      to {
+        background: #f6e58d;
+      }
+    }
+
+    @keyframes animate-yellow {
+      from {
+        background: #f6e58d;
+      }
+
+      to {
+        background: #badc58;
+      }
+    }
+
+    @keyframes animate-green {
+      from {
+        background: #badc58;
+      }
+
+      to {
+        background: #686de0;
+      }
+    }
+
+    @keyframes animate-blue {
+      from {
+        background: #686de0;
+      }
+
+      to {
+        background: #e056fd;
+      }
+    }
+
+    @keyframes animate-purple {
+      from {
+        background: #e056fd;
+      }
+
+      to {
+        background: #ff7979;
+      }
+    }
+
+    @keyframes text-bounce {
+      from {
+        font-size: 11.8em;
+      }
+
+      to {
+        font-size: 13em;
+      }
+    }
+
+    @keyframes animate-backdrop {
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.5);
+      }
+    }
+
+    .pride {
+      position: fixed;
+      width: 100%;
+      z-index: 0;
+
+      animation: animate-backdrop 0.5s infinite alternate;
+    }
+
+    .pride div {
+      width: 100vw;
+      height: 17vh;
+    }
+
+    .pride .red {
+      background: #ff7979;
+    }
+
+    .pride .orange {
+      background: #ffbe76;
+    }
+
+    .pride .yellow {
+      background: #f6e58d;
+    }
+
+    .pride .green {
+      background: #badc58;
+    }
+
+    .pride .blue {
+      background: #686de0;
+    }
+
+    .pride .purple {
+      background: #e056fd;
+    }
+  </style>
+</body>
+</html>
