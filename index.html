@@ -19,6 +19,8 @@
         <div class="size-input-container text-input-container">
           <input class="size-input text-input">
         </div>
+
+        <button class="btn-fullscreen" onclick="fullscreen()">F</button>
       </div>
     </div>
 
@@ -35,7 +37,7 @@
   <style>
     body {
       margin: 0;
-      font-family: Sukhumvit Set;
+      font-family: Sukhumvit Set, Helvetica Neue, sans-serif;
     }
 
     .backdrop {
@@ -168,11 +170,27 @@
       border-radius: 5em;
       font-family: Sukhumvit Set;
     }
+
+    .btn-fullscreen {
+      position: fixed;
+      bottom: 1em;
+      right: 1em;
+      border: none;
+      font-size: 1em;
+      background: white;
+      font-family: Helvetica Neue;
+      color: #2d2d30;
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+
+      border-radius: 15px;
+    }
+
   </style>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const title = document.querySelector('h1.title')
+      const fullscreenBtn = document.querySelector('.btn-fullscreen')
       const input = document.querySelector('.font-input')
       const sizeInput = document.querySelector('.size-input')
 
@@ -199,6 +217,12 @@
         }
       })
     })
+
+    async function fullscreen() {
+      const viewport = document.querySelector('.viewport')
+
+      await viewport.requestFullscreen({navigationUI: 'hide'})
+    }
   </script>
 </body>
 </html>
