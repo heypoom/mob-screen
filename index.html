@@ -5,20 +5,27 @@
   <title></title>
 </head>
 <body>
-  <div class="backdrop">
-    <h1>
-      อธิปไตย
-      ของประชาชน
-    </h1>
-  </div>
+  <div class="viewport">
+    <div class="backdrop">
+      <h1 class="title">
+        สามัญชน <br> สุดยอด
+      </h1>
 
-  <div class="pride">
-    <div class="red"></div>
-    <div class="orange"></div>
-    <div class="yellow"></div>
-    <div class="green"></div>
-    <div class="blue"></div>
-    <div class="purple"></div>
+      <div class="toolbar">
+        <div class="text-input-container">
+          <input class="text-input">
+        </div>
+      </div>
+    </div>
+
+    <div class="pride">
+      <div class="red"></div>
+      <div class="orange"></div>
+      <div class="yellow"></div>
+      <div class="green"></div>
+      <div class="blue"></div>
+      <div class="purple"></div>
+    </div>
   </div>
 
   <style>
@@ -117,6 +124,43 @@
     .pride .purple {
       background: #e056fd;
     }
+
+    input.text-input {
+      border: none;
+    }
+
+    .toolbar {
+      position: fixed;
+      bottom: 25px;
+    }
+
+    .toolbar .text-input-container {
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+      background: white;
+      border-radius: 5em;
+
+      padding: 0px 10px;
+      border-bottom: 3px solid #e056fd;
+    }
+
+    .toolbar input.text-input {
+      font-size: 2em;
+      border-radius: 5em;
+      font-family: Sukhumvit Set;
+    }
   </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const title = document.querySelector('h1.title')
+      const input = document.querySelector('input.text-input')
+
+      input.addEventListener('change', event => {
+        console.log(event)
+
+        title.innerHTML = event.target.value
+      })
+    })
+  </script>
 </body>
 </html>
